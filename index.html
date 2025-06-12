@@ -170,5 +170,24 @@
     }
   </script>
 
+  <script>
+  const imagens = ["foto1.jpg", "foto2.jpg", "foto3.jpg"];
+  let indiceAtual = 0;
+
+  const img = document.getElementById("imagem-carrossel");
+  const anterior = document.querySelector(".anterior");
+  const seguinte = document.querySelector(".seguinte");
+
+  anterior.addEventListener("click", () => {
+    indiceAtual = (indiceAtual - 1 + imagens.length) % imagens.length;
+    img.src = imagens[indiceAtual];
+  });
+
+  seguinte.addEventListener("click", () => {
+    indiceAtual = (indiceAtual + 1) % imagens.length;
+    img.src = imagens[indiceAtual];
+  });
+</script>
+
 </body>
 </html>
