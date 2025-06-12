@@ -94,6 +94,37 @@
       }
     }
 
+    .carrossel {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .carrossel img {
+      max-width: 90%;
+      max-height: 400px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .carrossel button {
+      background-color: #ffccdd;
+      border: none;
+      padding: 10px 20px;
+      font-size: 2em;
+      cursor: pointer;
+      border-radius: 10px;
+      transition: background-color 0.3s;
+    }
+    
+    .carrossel button:hover {
+      background-color: #fbaec2;
+    }
+    
+    
   </style>
 </head>
 <body>
@@ -112,6 +143,12 @@
     <p>Deliane, perdoa-me por tudo. Nunca quis magoar-te.</p>
     <p>O meu coração é teu, e eu daria tudo para ter-te de volta.</p>
     <p>Amo-te mais do que consigo pôr em palavras... 🥀</p>
+  </div>
+
+  <div class="carrossel">
+    <button class="anterior">&#10094;</button>
+    <img id="imagem-carrossel" src="foto1.jpg" alt="Foto minha">
+    <button class="seguinte">&#10095;</button>
   </div>
 
 
