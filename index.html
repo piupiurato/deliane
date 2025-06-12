@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volta pra mim, Deliane</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fdf0f5;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 6vw;
+      color: #d6336c;
+    }
+
+    h3 {
+      font-size: 4.5vw;
+      color: #5a2a41;
+      margin-top: 10px;
+    }
+
+    #playButton {
+      background-color: #d6336c;
+      color: white;
+      font-size: 4vw;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 20px auto;
+    }
+
+    #playButton:hover {
+      background-color: #a61e4d;
+    }
+
+    .video-container {
+      flex: 1;
+      display: none;
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 3em;
+      }
+
+      h3 {
+        font-size: 2em;
+      }
+
+      #playButton {
+        font-size: 1.5em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Eu te amo de verdade Deliane <3</h1>
+    <h3>Por favor volta pra mim</h3>
+    <button id="playButton" onclick="tocarVideo()">Clica aqui para ouvir e ver 🌹</button>
+  </header>
+
+  <div class="video-container" id="videoContainer">
+    <video id="meuVideo" src="video-deliane.mp4" loop></video>
+  </div>
+
+  <script>
+    function tocarVideo() {
+      const video = document.getElementById("meuVideo");
+      const container = document.getElementById("videoContainer");
+      const botao = document.getElementById("playButton");
+
+      container.style.display = "block";
+      botao.style.display = "none";
+
+      video.play().then(() => {
+        console.log("Vídeo iniciado com som!");
+      }).catch((error) => {
+        alert("O navegador bloqueou o som. Toca no vídeo para continuar.");
+        console.error("Erro ao tentar tocar o vídeo:", error);
+      });
+    }
+  </script>
+
+</body>
+</html>
